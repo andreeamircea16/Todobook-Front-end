@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+$light: 100;
+$regular: 200;
+$semiBold: 300;
+$bold: 400;
+$extraBold: 500;
+
+$tinyFont: 11px;
+$smallFont: 12px;
+$normalFont: 15px;
+$bigFont: 20px;
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("assets/fonts/open-sans/OpenSans-Light.ttf") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("assets/fonts/open-sans/OpenSans-Regular.ttf") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("assets/fonts/open-sans/OpenSans-SemiBold.ttf") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("assets/fonts/open-sans/OpenSans-Bold.ttf") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("assets/fonts/open-sans/OpenSans-ExtraBold.ttf") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 200;
+  scroll-behavior: smooth;
+}
+
+input {
+  outline: none;
+}
+
+.default-input {
+  height: 35px;
+  width: 300px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 0 20px;
+  font-size: 12px;
+}
+
+.default-button {
+  height: 35px;
+  width: 100px;
+  background-color: #D9C2B1; //#CB9C7F;
+  border: 1px solid #7F6454;
+  border-radius: 10px;
+  padding: 6px;
+  font-size: 14px;
+  text-align: center;
+  color: #7F6454;
+}
+
+.default-text {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 20px;
+
+  &.big {
+    font-size: 20px;
+  }
+
+  &.small {
+    font-size: 12px;
+  }
+}
+
+.semibold {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 400;
+}
+
+.default-message-error {
+  position: absolute;
+  color: #D80202;
+  font-size: 12px;
+  bottom: 0;
+  left: 0;
+  margin: 5px;
+}
