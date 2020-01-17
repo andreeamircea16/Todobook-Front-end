@@ -1,0 +1,148 @@
+<div class="page-container">
+  <ng-container *ngIf="isAdmin; else clientAccount">
+    <div class="crud_operations">
+      <div class="add_book" (click)="getLinkName('adauga')">Adauga Carte</div>
+      <div class="modify_book" (click)="getLinkName('modifica')">Modifica carte</div>
+      <div class="delete_book" (click)="getLinkName('sterge')">Sterge Carte</div>
+    </div>
+
+    <div *ngIf="errorMessage" style="position: relative">
+      <div style="color: red; position: absolute; top: 0; left: 50px" class="default-text">
+        {{errorMessage}}
+      </div>
+    </div>
+
+    <div *ngIf="pressed_link === 'adauga'" class="add_book_title">
+      <div class="default-text big">Adaugare carte</div>
+
+      <form id="form" name="myform" [formGroup]="form" (submit)="onAddSubmit()" (keyup.enter)="onAddSubmit()">
+        <div style="position: relative" class='book_name'>
+          <div class='descriptor'>
+            Nume carte
+          </div>
+          <input formControlName="book_name" class="default-input book_name" maxlength="25" minlength="4"
+                 [placeholder]="'Nume carte'">
+        </div>
+
+        <div style="position: relative" class='description'>
+          <div class='descriptor'>
+            Descriere
+          </div>
+          <input formControlName="description" class="default-input description" maxlength="100" minlength="4"
+                 [placeholder]="'Descrierea cartii'">
+        </div>
+
+        <div style="position: relative" class='book_author'>
+          <div class='descriptor'>
+            Nume autor
+          </div>
+          <input formControlName="author_name" class="default-input author_name" maxlength="36" minlength="4"
+                 [placeholder]="'Nume autor'">
+        </div>
+
+        <div class="buttons-container">
+          <div class="default-button-wrapper">
+            <div class="default-button" (click)="onAddSubmit()">Adauga carte</div>
+          </div>
+        </div>
+
+        <div *ngIf="bookAddedMessage" style="position: relative">
+          <div style="margin-top: 40px; position: absolute; top: 0; left: 0" class="default-text">Cartea a fost adaugata
+            cu succes!
+          </div>
+        </div>
+
+        <div *ngIf="requiredFields" style="position: relative">
+          <div style="margin-top: 40px; position: absolute; top: 0; left: 0" class="default-text">Completati toate
+            datele!
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <ng-container *ngIf="pressed_link === 'modifica'">
+      <ng-container *ngIf="!modify; else showEditForm">
+        <div class="default-text" style="margin: 50px 50px 0">Alege caretea pa care doresti sa o modifici:</div>
+        <div class="books-container">
+          <div class="column" *ngFor="let book of books">
+            <div class="bookOne" (click)="modifyBook(book)">
+              <img src={{book.imageName}} alt="book" style="width:100%">
+              <div class="book">
+                <p>"{{book.name}}"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #showEditForm>
+        <div class="add_book_title">
+          <div class="default-text big">Modifica carte</div>
+          <form id="form-edit" name="myformEdit" [formGroup]="formEdit" (submit)="onPutSubmit()"
+                (keyup.enter)="onPutSubmit()">
+            <div style="position: relative" class='book_name'>
+              <div class='descriptor'>
+                Nume carte
+              </div>
+              <input formControlName="book_name_edit" class="default-input book_name" maxlength="25" minlength="4"
+                     [placeholder]="'Nume carte'">
+            </div>
+
+            <div style="position: relative" class='description'>
+              <div class='descriptor'>
+                Descriere
+              </div>
+              <input formControlName="description_edit" class="default-input description" maxlength="100" minlength="4"
+                     [placeholder]="'Descrierea cartii'">
+            </div>
+
+            <div style="position: relative" class='book_author'>
+              <div class='descriptor'>
+                Nume autor
+              </div>
+              <input formControlName="author_name_edit" class="default-input author_name" maxlength="25" minlength="4"
+                     [placeholder]="'Nume autor'">
+            </div>
+
+            <div class="buttons-container">
+              <div class="default-button-wrapper">
+                <div class="default-button" (click)="onPutSubmit()">Modifica carte</div>
+              </div>
+            </div>
+
+            <div *ngIf="bookEditedMessage" style="position: relative">
+              <div style="margin-top: 40px; position: absolute; top: 0; left: 0" class="default-text">Cartea a fost
+                modificata
+                cu succes!
+              </div>
+            </div>
+
+            <div *ngIf="requiredFields" style="position: relative">
+              <div style="margin-top: 40px; position: absolute; top: 0; left: 0" class="default-text">Completati toate
+                datele!
+              </div>
+            </div>
+          </form>
+        </div>
+      </ng-template>
+    </ng-container>
+
+    <ng-container *ngIf="pressed_link === 'sterge'">
+      <div class="default-text" style="margin: 50px 50px 0">Alege caretea pa care doresti sa o stergi:</div>
+      <div class="books-container">
+        <div class="column" *ngFor="let book of books">
+          <div class="bookOne" (click)="deleteBook(book.uid)">
+            <img src={{book.imageName}} alt="book" style="width:100%">
+            <div class="book">
+              <p>"{{book.name}}"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #clientAccount>
+
+  </ng-template>
+</div>

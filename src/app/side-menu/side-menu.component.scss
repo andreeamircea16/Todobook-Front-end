@@ -1,0 +1,34 @@
+.sidemenu-link {
+  height: 45px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+  color: #7F6454;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  transition: box-shadow 0.1s, color 0.1s, background-color 0.1s;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+  &.selected {
+    color: black;
+    background-color: #eaeaea;
+  }
+
+  &:hover:not(.selected) {
+    background-color: #f6f6f6;
+
+    &:first-of-type {
+      transform: none;
+    }
+  }
+
+  &:active:not(.selected) {
+    background-color: #eaeaea;
+    color: black;
+  }
+}

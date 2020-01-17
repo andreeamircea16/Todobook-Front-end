@@ -1,0 +1,155 @@
+<div class="page-container">
+  <div class="book-page">
+    <div class="book-div">
+      <img src={{book?.imageName}} alt="Game" height="410" width="290">
+    </div>
+
+    <div class="book-descripton">
+      <div class="book-title">
+        <div class="header-container">
+          <h1 class="header-title">{{book?.name}}</h1>
+        </div>
+        <div class="header-container">
+          <a href="https://library.bookster.ro/authors/george-r-r-martin?ref=m_auth-0-0&iid=4817&ipid=31284"><h1
+            class="header-author"><u>{{book?.author?.name}}</u></h1></a>
+        </div>
+        <div class="header-container flex-row">
+          <div class="fa checked"></div>
+          <div class="fa checked"></div>
+          <div class="fa checked"></div>
+          <div class="fa checked"></div>
+          <div class="fa checked"></div>
+          <div class="fa checked"></div>
+          <div class="fa checked"></div>
+          <div class="fa checked"></div>
+          <div class="fa"></div>
+          <div class="fa"></div>
+        </div>
+      </div>
+      <div class="book-desc">
+        <p><i>Despre carte:</i></p>
+        <p>{{book?.description}}</p>
+      </div>
+    </div>
+
+    <div class="book-operation">
+      <div class="book-actions">
+        <div class="button-borrow">
+          <button class="borrow-button">Imprumuta</button>
+        </div>
+        <div class="delivery-info" align="center">
+          <p><i>Livrare: </i> miercuri, 15 aprilie</p>
+        </div>
+      </div>
+      <div class="book-other-actions">
+        <div class="wishlist-button">
+          <!-- button as a link -->
+          <button class="wish-button"><img src="https://img.icons8.com/ios/20/000000/like.png"> Wishlist</button>
+        </div>
+        <div class="read-button">
+          <!-- am citit button-->
+          <button class="readBook-button"><img src="https://img.icons8.com/ios-filled/20/000000/checkmark.png"> Am citit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="book-category">
+    <div class="category">
+      <a href="https://www.bookster.ro/library/category/mister/">
+        <button class="category-button"><img src="https://img.icons8.com/material/20/000000/sword.png"> Mistery</button>
+      </a>
+      <button class="category-button"><img src="https://img.icons8.com/windows/20/000000/desk-lamp.png">Science fiction
+      </button>
+    </div>
+  </div>
+  <div class="book-recomend">
+    <div class="other-books">
+      <h2 class="header-author" align="left" valign="top">Materiale asemanatoare: </h2>
+      <div class="row" align="center">
+        <div class="column">
+          <div class="bookOne">
+            <a href="https://library.bookster.ro/books/mizerabilii-3?ref=hp_sim-2-4&iid=33753">
+              <img src="../../assets/images/hugo.jpg" alt="Gatsby" style="width:100%">
+            </a>
+            <div class="book" style="margin: 0">
+              <p style="margin: -10px 0 0">"Mizerabilii"</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="bookOne">
+            <a href="https://library.bookster.ro/books/shogun?ref=src-1&qid=09120653342&qrid=37030&qrt=itm">
+              <img src="../../assets/images/shogun.jpg" alt="Shogun" style="width:100%">
+            </a>
+            <div class="book">
+              <p style="margin: -10px 0 0">"Shogun"</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="bookOne">
+            <a href="https://library.bookster.ro/books/calatoarea?ref=src-2&qid=09120732327&qrid=24521&qrt=itm">
+              <img src="../../assets/images/outlander.jpg" alt="Outlander" style="width:100%">
+            </a>
+            <div class="book">
+              <p style="margin: -10px 0 0">"Calatoarea"</p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="bookOne">
+            <a href="https://library.bookster.ro/books/the-last-wish?ref=src-4&qid=09120812789&qrid=31497&qrt=itm">
+              <img src="../../assets/images/witcher.jpg" alt="Witcher" style="width:100%">
+            </a>
+            <div class="book">
+              <p style="margin: -10px 0 0">"Last wish"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="book-comment">
+    <div class="comment-area">
+      <h2 class="header-author" align="left" valign="top">Recenzii: </h2>
+      <div class="add-comment-container">
+        <div class="comment-logo">
+          <img src="../../assets/images/pencil40.png" alt="Comment" style="width:100%">
+        </div>
+        <div class="add-commet-area">
+          <textarea class="text-area" name="comment-form" form="usrform" (input)="onTextAreaChange($event)"
+                    placeholder="Impartaseste cu ceilalti todobooksteri parerea ta!"></textarea>
+        </div>
+        <br>
+        <form id="usrform">
+          <div class="under-comment-area"><p>Maxim 2000 caractere</p>
+            <div class="add-comment-button-area">
+              <button class="add-comment-button" (click)="addComment()">Adauga</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br><br>
+      <hr color="black">
+      <div class="users-comments-container">
+        <div class="user-comment" *ngFor="let comment of book?.comments">
+          <div class="comment-logo">
+            <img src="../../assets/images/pencil40.png" alt="Comment" style="width:100%">
+          </div>
+          <div class="user-comment-name">
+            <p><i><b>
+              {{comment?.user?.last_name ? comment.user.last_name + ' ' + comment?.user.first_name : "User"}}
+            </b></i>, {{comment?.comment_time}}<p>
+          </div>
+          <br>
+          <div class="comment-text-area"><p>{{comment?.comment_text}}</p>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

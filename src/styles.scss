@@ -63,6 +63,10 @@ input {
   outline: none;
 }
 
+.page-container {
+  margin-top: 50px;
+}
+
 .default-input {
   height: 35px;
   width: 300px;
@@ -73,16 +77,39 @@ input {
   font-size: 12px;
 }
 
+.default-button-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 37px;
+  width: 102px;
+}
+
 .default-button {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 35px;
   width: 100px;
   background-color: #D9C2B1; //#CB9C7F;
   border: 1px solid #7F6454;
   border-radius: 10px;
-  padding: 6px;
+  padding: 9px;
   font-size: 14px;
   text-align: center;
   color: #7F6454;
+  cursor: pointer;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .30);
+
+  &:hover {
+    top: -1px;
+    left: -1px;
+    height: 37px;
+    width: 102px;
+    padding: 10px;
+  }
 }
 
 .default-text {
@@ -107,11 +134,24 @@ input {
   font-weight: 400;
 }
 
-.default-message-error {
+.default-message-error, .default-message-successful {
   position: absolute;
   color: #D80202;
   font-size: 12px;
   bottom: 0;
   left: 0;
   margin: 5px;
+
+  &.signup-message {
+    bottom: 5px;
+    left: 5px;
+  }
+}
+
+.default-message-error {
+  color: #D80202;
+}
+
+.default-message-successful {
+  color: green;
 }

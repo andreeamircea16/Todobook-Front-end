@@ -18,6 +18,7 @@
 }
 
 .login-container {
+  position: relative;
   opacity: 1;
   width: 400px;
   height: 600px;
@@ -67,4 +68,22 @@
   height: 17px;
   background: url("../../assets/images/pass-icon.png") no-repeat center;
   background-size: contain;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.login-line {
+  width: calc(100% + 100px);
+  height: 1px;
+  background-color: #D9C2B1;
+  margin: 30px;
 }

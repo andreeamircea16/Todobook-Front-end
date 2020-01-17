@@ -1,11 +1,78 @@
 .toolbar-container {
+  top: 0;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 45px;
+  height: 50px;
   z-index: 10;
   background-color: white;
   padding: 0 40px;
-  border-bottom: 1px solid #D9C2B1;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16);
+
+  &.centered {
+    justify-content: center;
+  }
+}
+
+.logo-container, .left-container, .account-container {
+  outline: none;
+  cursor: pointer;
+}
+
+.logo {
+  width: 120px;
+  height: 45px;
+  background: url("../../assets/images/logo2.png") no-repeat center;
+  background-size: contain;
+}
+
+.account-logo {
+  width: 30px;
+  height: 30px;
+  background: url("../../assets/images/account.png") no-repeat center;
+  background-size: contain;
+}
+
+.account-name {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.account-container, .left-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  margin-right: 15px;
+  width: 25px;
+  height: 25px;
+  background: url("../../assets/images/menu-icon.png") no-repeat center;
+  background-size: contain;
+}
+
+.menu-content {
+  position: fixed;
+
+  &.open {
+    .menu-wrapper {
+      transform: none;
+      transition: transform 0.15s cubic-bezier(0, 0, 0.2, 1);;
+    }
+  }
+}
+
+.menu-wrapper {
+  position: absolute;
+  left: -40px;
+  top: 25px;
+  min-width: 300px;
+  background-color: white;
+  box-shadow: 0 3px 6px 0 rgba(black, 0.2);
+  height: calc(100vh - 50px);
+  transform: translate(calc(-100% - 5px));
+  transition: transform 0.15s cubic-bezier(0.4, 0, 1, 1);
+  z-index: 1;
 }

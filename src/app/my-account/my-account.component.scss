@@ -1,0 +1,165 @@
+.page-container {
+  width: 100%;
+  height: calc(100vh - 100px);
+  padding: 50px 0;
+}
+
+.crud_operations {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.add_book, .modify_book, .delete_book {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.descriptor {
+  margin-bottom: 5px;
+}
+
+.big {
+  margin-bottom: 30px;
+}
+
+.add_book_title {
+  position: relative;
+  opacity: 1;
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 150px;
+  height: 150px;
+  background: url("../../assets/images/logo.jpeg") no-repeat center;
+  background-size: contain;
+  margin-bottom: 40px;
+}
+.default-input {
+  padding: 0 20px 0 30px !important;
+}
+.user-image, .pass-image {
+  position: absolute;
+  z-index: 1;
+}
+.user-image {
+  top: 6px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  background: url("../../assets/images/user-icon.jpg") no-repeat center;
+  background-size: contain;
+}
+.pass-image {
+  top: 8px;
+  left: 8px;
+  width: 17px;
+  height: 17px;
+  background: url("../../assets/images/pass-icon.png") no-repeat center;
+  background-size: contain;
+}
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.margin-top {
+  margin-top: 15px;
+}
+.login-line {
+  width: calc(100% + 100px);
+  height: 1px;
+  background-color: #D9C2B1;
+  margin: 30px;
+}
+
+.page-container {
+  margin-top: 50px;
+}
+.default-input {
+  height: 35px;
+  width: 300px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 0 20px;
+  font-size: 12px;
+}
+.default-button-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 37px;
+  width: 102px;
+}
+.default-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: fit-content;
+  width: fit-content;
+  background-color: #D9C2B1;
+  border: 1px solid #7F6454;
+  border-radius: 10px;
+  padding: 9px;
+  font-size: 14px;
+  text-align: center;
+  color: #7F6454;
+  cursor: pointer;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .30);
+}
+
+.description, .book_author, .book_name, .add_book_title {
+  margin-bottom: 15px;
+}
+
+div.bookOne {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 45px;
+  outline: none;
+  cursor: pointer;
+}
+
+div.book {
+  text-align: center;
+  height: 20px;
+}
+
+.column {
+  width: 150px;
+  height: 250px;
+  padding: 5px;
+  margin: 20px 60px;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 40px;
+}
+
+p {
+  color: #566D7E;
+  font-family: 'Cardo', serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+  margin: 5px 0;
+}

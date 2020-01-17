@@ -1,12 +1,21 @@
-<div class="toolbar-container">
-  <div class="logo-container">
-    <div class="title">Todobook</div>
+<div class="toolbar-container" [ngClass]="{'centered': homeRoute === '/login'}">
+  <div *ngIf="menuIsOpen" [class.open]="menuIsOpen" class="menu-content" #menuContainer>
+    <div class="menu-wrapper">
+      <app-side-menu (close)="closeMenu()"></app-side-menu>
+    </div>
+  </div>
+
+  <div *ngIf="hasAccount" class="left-container">
+    <div class="menu" (click)="toggleMenu()"></div>
+    <div class="account-container" [routerLink]="'/my-account'">
+      <div class="account-logo"></div>
+      <div *ngIf="userName" class="account-name">{{ userName }}</div>
+    </div>
+  </div>
+  <div [routerLink]="homeRoute" class="logo-container">
     <div class="logo"></div>
   </div>
-  <div class="menu-container">
-    <div class=""></div>
+  <div *ngIf="hasAccount" class="default-button-wrapper">
+    <div class="default-button" (click)="logout()">Sign Out</div>
   </div>
-  <!--<div class="search"></div>-->
-  <div class="account"></div>
-
 </div>

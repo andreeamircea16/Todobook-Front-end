@@ -1,1 +1,37 @@
-<div>Homepage works</div>
+<div class="page-container">
+
+  <div class="section sectionOne"></div>
+
+  <div class="subsection subsectionOne">
+    <h2 align="left" valign="top">Recomandari pentru tine: </h2>
+    <div class="row" align="center">
+      <div class="column" *ngFor="let book of firstRowBooks">
+        <div class="bookOne" [routerLink]="'/book/' + book.uid">
+          <img src={{book.imageName}} style="width:100%">
+          <div class="book">
+            <p>"{{book.name}}"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section sectionTwo"></div>
+
+    <div class="subsection subsectionTwo">
+      <h2 align="left" valign="top">Vizualizate acum: </h2>
+      <div class="row" align="center">
+        <div class="column" *ngFor="let book of secondRowBooks">
+          <div class="bookOne" [routerLink]="'/book/' + book.uid">
+            <img src={{book.imageName}} alt="book" style="width:100%">
+            <div class="book">
+              <p>"{{book.name}}"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section sectionThree"></div>
+    <div class="subsection subSectionThree"></div>
+  </div>
+</div>

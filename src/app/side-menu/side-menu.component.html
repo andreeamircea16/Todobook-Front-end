@@ -1,0 +1,7 @@
+<a *ngFor="let category of categories"
+   class="sidemenu-link animable"
+   [routerLink]="'category/' + category.name"
+   [routerLinkActive]="'category/' + category.name ? 'selected' : ''"
+   (click)="closeSidemenu()">
+  {{category.name }}
+</a>

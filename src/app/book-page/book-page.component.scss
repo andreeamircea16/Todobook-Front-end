@@ -1,0 +1,332 @@
+.book-page {
+  width: calc(100% - 40px);
+  height: 420px;
+  display: flex;
+  margin: 20px;
+}
+.book-category {
+  width: 100%;
+  height: 45px;
+  background-color: #f9f2ec;
+}
+.category {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.book-recomend {
+  width: 100%;
+  height: 320px;
+}
+.other-books {
+  height: 310px;
+  margin: 40px;
+  position: relative;
+}
+.book-comment{
+  width: 100%;
+  background-color: #f9f2ec;
+}
+.comment-area {
+  position: relative;
+  padding-top: 40px;
+  margin: 40px 40px;
+}
+.add-commet-area {
+  height: 150px;
+  position: relative;
+  margin-left: 40px;
+}
+.add-comment-container {
+  height: 290px;
+  position: relative;
+  top: 3%;
+  left: 1%;
+}
+.comment-logo {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 20%;
+}
+.under-comment-area {
+  height: 70px;
+  position: relative;
+  top: 3%;
+}
+.users-comments-container {
+  position: relative;
+  top: 5%;
+}
+.user-comment {
+  position: relative;
+  top: 5%;
+  height: 210px;
+}
+.comment-text-area {
+  position: relative;
+  margin-left: 60px;
+  height: 120px;
+}
+.user-comment-name {
+  position: relative;
+  top: 2%;
+  margin-left: 60px;
+  height: 20px;
+}
+
+.add-comment-button-area {
+  width: 250px;
+  height: 40px;
+  margin: auto;
+  padding: 10px 10px;
+  position: absolute;
+  top: 5%;
+  left: 75%;
+}
+
+.footer-page {
+  width: 100%;
+  height: 10%;
+  background-color: black;
+}
+
+.book-div{
+  flex-grow: 1;
+  height: 410px;
+  padding: 10px;
+  max-width: 310px;
+}
+.book-descripton {
+  height: 400px;
+  padding: 10px;
+  flex-grow: 2;
+  max-width: 785px;
+}
+
+.book-operation {
+  height: 400px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-actions {
+  height: 170px;
+}
+
+.button-borrow {
+  height: 50px;
+}
+.wishlist-button, .read-button {
+  height: 40px;
+  padding: 10px;
+}
+.delivery-info {
+  height: 30px;
+  max-width: 180px;
+}
+.book-title {
+  height: 100px;
+  padding: 10px;
+}
+.title-container {
+  width: 800px;
+  height: 50px;
+}
+
+.book-desc {
+  padding: 10px;
+}
+
+.borrow-button {
+  cursor: pointer;
+  border: none;
+  position: relative;
+  width: 100%;
+  height: 45px;
+  background-color: #4CAF50;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 3px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.wish-button {
+  cursor: pointer;
+  border: none;
+  position: relative;
+  height: 35px;
+  background-color: #cc9966;
+  color: black;
+  padding: 0 35px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 18px;
+  border-radius: 3px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.readBook-button {
+  cursor: pointer;
+  border: none;
+  position: relative;
+  height: 35px;
+  background-color: #cc9966;
+  color: black;
+  padding: 0 35px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 18px;
+  border-radius: 3px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.category-button {
+  cursor: pointer;
+  border: 2px solid #66c2ff;
+  position: relative;
+  width: 190px;
+  height: 45px;
+  background-color: #white;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  border-radius: 20px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  margin-left: 20px;
+}
+
+.add-comment-button {
+  cursor: pointer;
+  border: none;
+  position: relative;
+  top: 5%;
+  left: 10%;
+  width: 200px;
+  height: 35px;
+  background-color: #cc9966;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 18px;
+  border-radius: 3px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.category-button:hover {
+  background-color: #e6f5ff;
+  color: black;
+  outline: none;
+}
+
+.borrow-button:hover  {
+  background-color: #2f6a31; /* Green */
+  color: white;
+}
+.wish-button:hover, .readBook-button:hover, .add-comment-button:hover {
+  background-color: #ac7339;
+  color: white;
+}
+
+div.bookOne {
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 50px;
+}
+
+div.book {
+  text-align: center;
+  height: 10px;
+  padding: 10px 0;
+}
+
+h1, h2 {
+  line-height: 1;
+  margin-top: 0;
+  color: black;
+  display: inline-block;
+  position: relative;
+}
+
+.header-author {
+  font-size: 1.5rem;
+  margin-bottom: 0.825rem;
+  font-weight: 300;
+  font-family: 'Merriweather';
+  font-style: italic;
+}
+
+.header-title {
+  font-size: 3rem;
+  margin-bottom: 0.33rem;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-weight: 350;
+  opacity: 0.5;
+}
+
+p{
+  color: #392613;
+  font-family: 'Cardo', serif;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+.row {
+  display: flex;
+  width: 90%;
+}
+
+.column {
+  flex: 25%;
+  padding: 5px;
+
+}
+
+.text-area {
+  width: 95%;
+  height: 100px;
+  padding: 10px;
+  position: relative;
+  top: 5%;
+  left: 2%;
+  font: 1.2em/1.4em cursive;
+  font-style: italic;
+  color: #095484;
+  outline: none;
+  resize: none;
+}
+
+.fa {
+  width: 15px;
+  height: 18px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("../../assets/images/star2.png");
+
+  &.checked {
+    background-image: url("../../assets/images/star.svg");
+  }
+}
+
+.header-container {
+  &.flex-row {
+    display: flex;
+  }
+}

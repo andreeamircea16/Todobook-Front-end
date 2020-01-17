@@ -3,17 +3,32 @@
     <div class="logo"></div>
     <div class="default-text big">Bine ai venit la <span class="semibold">Todobook</span>!</div>
     <div class="default-text">Makes you read more (while on company time, duh)</div>
-    <div style="position: relative">
-      <input class="default-input username" maxlength="25" minlength="4" [placeholder]="'username'">
-      <div class="user-image"></div>
-      <div class="default-message-error">err message</div>
-    </div>
-    <div style="position: relative">
-      <input class="default-input password" type="password" maxlength="15" minlength="4" [placeholder]="'password'">
-      <div class="pass-image"></div>
-      <div class="default-message-error"></div>
-    </div>
-    <div class="default-button">Log in</div>
-    <hr>
+    <form id="form" name="myform" [formGroup]="form" (submit)="onSubmit()" (keyup.enter)="onSubmit()">
+      <div style="position: relative">
+        <input formControlName="email" class="default-input username" maxlength="25" minlength="4"
+               [placeholder]="'username'" (ngModelChange)="onInputChange($event, 'username')">
+        <div class="user-image"></div>
+      </div>
+      <div style="position: relative">
+        <input formControlName="password" class="default-input password" type="password" maxlength="15" minlength="4"
+               [placeholder]="'password'" (ngModelChange)="onInputChange($event, 'password')">
+        <div class="pass-image"></div>
+        <div class="default-message-error">{{ errorMessage }}</div>
+      </div>
+      <div class="buttons-container">
+        <div class="default-button-wrapper">
+          <div class="default-button" (click)="onSubmit()">Log in</div>
+        </div>
+        <div class="login-line"></div>
+        <div class="default-button-wrapper margin-top">
+          <div class="default-button" (click)="signUp()">Sign Up</div>
+        </div>
+
+        <div *ngIf="signUpMessage" [ngClass]="signedUp ? 'default-message-successful signup-message' : 'default-message-error signup-message'">
+          {{ signUpMessage }}
+        </div>
+
+      </div>
+    </form>
   </div>
 </div>
